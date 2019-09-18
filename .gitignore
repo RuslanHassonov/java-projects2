@@ -1,0 +1,16 @@
+.c9/
+.launch
+.settings/
+.settings/
+.metadata/
+bin/
+test-output/
+target/
+.project
+.classpath
+.springBeans
+*.jar
+*.iml
+*.idea
+.DS_Store
+Thumbs.db
