@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <!--START PART 2-->
+    <h2>Standard:</h2>
+    <input type="text" id="gemeente"/>
+    <input id="submit" type="submit" value="Submit">
+    <div id="placeholder"></div>
+    <!--END PART 2-->
+
+    <!--START PART 3-->
+    <h2>Via jquery:</h2>
+    <div class="ui-widget">
+        <label for="gemeenten">Gemeenten: </label>
+        <input id="gemeenten">
+    </div>
+    <!--END PART 3-->
+    <script>
+
+        $(document).ready(function () {
+
+            // <!--START PART 2-->
+            $("#submit").click(function (event) {
+                alert("Hi, I'm pressed!");
+                event.preventDefault();
+            });
+            // <!--END PART 2-->
+
+            // <!--START PART 3-->
+            $( "#gemeenten" )
+
+            // <!--END PART 3-->
+        });
+    </script>
+</body>
+</html>
