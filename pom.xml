@@ -157,6 +157,7 @@
     <modules>
         <module>introduction</module>
         <module>JSF</module>
+        <module>integrationexercises</module>
     </modules>
 
     <dependencyManagement>
