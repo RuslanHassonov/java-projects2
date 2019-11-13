@@ -158,6 +158,7 @@
         <module>introduction</module>
         <module>JSF</module>
         <module>integrationexercises</module>
+        <module>vaadin</module>
     </modules>
 
     <dependencyManagement>
