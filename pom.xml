@@ -159,6 +159,7 @@
         <module>JSF</module>
         <module>integrationexercises</module>
         <module>vaadin</module>
+        <module>RPI</module>
     </modules>
 
     <dependencyManagement>
