@@ -12,5 +12,6 @@
 	
 	<modules>
 		<module>ie1</module>
+		<module>ie2</module>
 	</modules>
 </project>
