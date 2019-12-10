@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>angular-ui</name>
+	<description>The UI (angular) module</description>
+
+	<groupId>be.mobyus</groupId>
+	<artifactId>angular-ui</artifactId>
+
+	<parent>
+		<groupId>be.mobyus</groupId>
+		<artifactId>angular</artifactId>
+		<version>0.1</version>
+	</parent>
+
+	<properties>
+		<base.dir>../../</base.dir>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+				<descriptors>
+					<descriptor>assembly.xml</descriptor>
+				</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>exec-maven-plugin</artifactId>
+							<executions>
+								<execution>
+									<id>exec-npm-install</id>
+									<phase>compile</phase>
+									<configuration>
+										<workingDirectory>${project.basedir}</workingDirectory>
+										<executable>npm</executable>
+										<arguments>
+											<argument>install</argument>
+										</arguments>
+									</configuration>
+									<goals>
+										<goal>exec</goal>
+									</goals>
+								</execution>
+								<execution>
+									<id>exec-npm-build</id>
+									<phase>compile</phase>
+									<configuration>
+										<workingDirectory>${project.basedir}</workingDirectory>
+										<executable>npm</executable>
+										<arguments>
+											<argument>run</argument>
+											<argument>build</argument>
+										</arguments>
+									</configuration>
+									<goals>
+										<goal>exec</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+		<profile>
+			<id>release</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>exec-maven-plugin</artifactId>
+							<executions>
+								<execution>
+									<id>exec-npm-install</id>
+									<phase>compile</phase>
+									<configuration>
+										<workingDirectory>${project.basedir}</workingDirectory>
+										<executable>npm</executable>
+										<arguments>
+											<argument>install</argument>
+										</arguments>
+									</configuration>
+									<goals>
+										<goal>exec</goal>
+									</goals>
+								</execution>
+								<execution>
+									<id>exec-npm-build-prod</id>
+									<phase>package</phase>
+									<configuration>
+										<workingDirectory>${project.basedir}</workingDirectory>
+										<executable>npm</executable>
+										<arguments>
+                      									<argument>run</argument>
+											<argument>buildRelease</argument>
+										</arguments>
+									</configuration>
+									<goals>
+										<goal>exec</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
+</project>
+

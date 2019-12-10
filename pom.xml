@@ -160,6 +160,7 @@
         <module>integrationexercises</module>
         <module>vaadin</module>
         <module>RPI</module>
+        <module>angular</module>
     </modules>
 
     <dependencyManagement>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>be.mobyus</groupId>
+	<artifactId>angular</artifactId>
+
+	<parent>
+		<groupId>be.mobyus</groupId>
+		<artifactId>java-projects</artifactId>
+		<version>0.1</version>
+	</parent>
+	
+	<modules>
+		<module>angular-rest</module>
+		<module>angular-service</module>
+		<module>angular-ui</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>be.mobyus</groupId>
+				<artifactId>angular-ui</artifactId>
+				<version>0.1</version>
+				<type>zip</type>
+			</dependency>
+			<dependency>
+				<groupId>be.mobyus</groupId>
+				<artifactId>angular-service</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>be.mobyus</groupId>
+				<artifactId>angular-rest</artifactId>
+				<version>0.1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>5.4.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

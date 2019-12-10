@@ -1,0 +1,84 @@
+<mat-card class="demo-card demo-basic">
+  <mat-card-content>
+    <div align="right">
+      <button md-button (click)="logout()">logout</button>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+<mat-card class="demo-card demo-basic">
+
+
+  <mat-toolbar color="primary">Search criteria</mat-toolbar>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="search($event)">
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <div formGroupName="user">
+            <td>
+              <!-------->
+              <!-- TODO firstname-->
+              <!--------->
+
+            </td>
+            <td>
+              <!-------->
+              <!-- TODO lastname-->
+              <!--------->
+            </td>
+
+          </div>
+        </tr>
+        <tr>
+          <td>
+            <!-------->
+            <!-- TODO the product auto completer-->
+            <!--------->
+          </td>
+          <td>
+
+            <!-------->
+            <!-- TODO the date picker-->
+            <!--------->
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-------->
+            <!-- TODO min order price-->
+            <!--------->
+
+          </td>
+          <td>
+            <!-------->
+            <!-- TODO max order price-->
+            <!--------->
+
+          </td>
+        </tr>
+
+      </table>
+
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <button mat-button type="submit">Search</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="demo-card demo-basic">
+  <mat-toolbar color="primary">Search results</mat-toolbar>
+  <mat-card-content>
+
+    <!-------->
+    <!-- TODO search result table-->
+    <!--------->
+
+  </mat-card-content>
+</mat-card>
