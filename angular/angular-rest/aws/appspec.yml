@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: /modules/angular-rest/angular-rest-0.1.war
+    destination: /tmp
+hooks:
+  AfterInstall:
+    - location: deploy.sh
+
