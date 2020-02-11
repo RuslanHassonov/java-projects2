@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {OrderSearchService} from "./order-search.service";
 
 @Component({
   template: `
@@ -13,9 +14,9 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class OrderDetailComponent implements OnInit, OnDestroy {
 
-  constructor(private route: ActivatedRoute) {
-
+  constructor(private route: ActivatedRoute, private searchOrderService: OrderSearchService) {
   }
+
 
   ngOnInit() {
   }

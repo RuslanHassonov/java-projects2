@@ -21,4 +21,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RequestMapping("authenticated/products")
 public class ProductController {
 
+	@Autowired
+	private ProductService productService;
+
+	@RequestMapping(path = "findProducts", method = GET, produces= "application/json")
+	public Collection<Product> findOrders(@RequestParam String productName) {
+		return productService.findProducts(productName);
+	}
 }

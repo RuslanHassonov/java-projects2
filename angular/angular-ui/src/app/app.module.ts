@@ -3,21 +3,41 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {SearchorderComponent} from './searchorder.component';
+import {OrderSearchComponent} from './order-search.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MatAutocompleteModule,
-  MatCardModule, MatDatepickerModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
   MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
   MatInputModule,
-  MatOptionModule, MatPaginatorModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatOptionModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
   MatRadioModule,
+  MatRippleModule,
   MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
   MatSortModule,
   MatTableModule,
+  MatTabsModule,
   MatToolbarModule,
+  MatTooltipModule
 } from "@angular/material";
-import {SearchOrderService} from "./searchorder.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from "./login.component";
 
@@ -26,14 +46,18 @@ import {AuthenticationGuard} from "./authentication.guard";
 import {HttpClientModule} from "@angular/common/http";
 import {MatMomentDateModule} from "@angular/material-moment-adapter";
 import {OrderDetailComponent} from "./order-detail.component";
+import {CdkTableModule} from "@angular/cdk/table";
+import {OrderSearchService} from "./order-search.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchorderComponent,
+    OrderSearchComponent,
     LoginComponent,
     OrderDetailComponent
+  ],
+  entryComponents: [
   ],
   imports: [
     BrowserModule,
@@ -53,9 +77,41 @@ import {OrderDetailComponent} from "./order-detail.component";
     MatSelectModule,
     MatDatepickerModule,
     MatPaginatorModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    CdkTableModule,
+    ReactiveFormsModule,
   ],
-  providers: [SearchOrderService, LoginService, AuthenticationGuard],
+  providers: [OrderSearchService, LoginService, AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

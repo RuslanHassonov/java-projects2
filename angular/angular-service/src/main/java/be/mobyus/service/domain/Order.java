@@ -10,14 +10,22 @@ import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.GenerationType.AUTO;
 import static javax.persistence.TemporalType.DATE;
 
+@Entity
+@Table(name = "order_")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private Long id;
 
+    @ManyToOne
     private User user;
+    @Temporal(DATE)
     private Date orderDate;
     private BigDecimal totalAmount;
 
+    @OneToMany(cascade = ALL)
+    @JoinColumn
     private Collection<Product> products = new ArrayList<>();
 
     public Long getId() {

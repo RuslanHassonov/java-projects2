@@ -1,6 +1,6 @@
 import {async, TestBed} from '@angular/core/testing';
 import {BrowserModule} from '@angular/platform-browser';
-import {SearchorderComponent} from './searchorder.component';
+import {OrderSearchComponent} from './order-search.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
   MdAutocompleteModule,
@@ -40,7 +40,7 @@ import {CdkTableModule} from "@angular/cdk/table";
 import {routingForApp} from "./app.routes";
 import {ReactiveFormsModule} from "@angular/forms";
 import {LoginService} from "./login.service";
-import {SearchOrderService} from "./searchorder.service";
+import {OrderSearchService} from "./searchorder.service";
 import {Router, RouterModule} from "@angular/router";
 
 describe('SearchorderComponent', () => {
@@ -84,20 +84,20 @@ describe('SearchorderComponent', () => {
         ReactiveFormsModule
       ],
       declarations: [
-        SearchorderComponent
+        OrderSearchComponent
       ],
-      providers:[SearchOrderService, LoginService, { provide: Router,useClass: RouterStub}]
+      providers:[OrderSearchService, LoginService, { provide: Router,useClass: RouterStub}]
     }).compileComponents();
   }));
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(SearchorderComponent);
+    const fixture = TestBed.createComponent(OrderSearchComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
   it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(SearchorderComponent);
+    const fixture = TestBed.createComponent(OrderSearchComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.length).toEqual(0);
   }));

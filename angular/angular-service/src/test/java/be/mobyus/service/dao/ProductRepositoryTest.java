@@ -28,7 +28,7 @@ public class ProductRepositoryTest extends AbstractTransactionalTestNGSpringCont
 
 
     public void testFindProducts() {
-        /*Product product = new Product();
+        Product product = new Product();
         product.setProductDescription("1996 ID software anthology box set with cool stuff");
         product.setProductName("id anthology");
         product.setProductPrice(new BigDecimal("70.00"));
@@ -43,6 +43,6 @@ public class ProductRepositoryTest extends AbstractTransactionalTestNGSpringCont
         assertEquals(fromDb.getId(), product.getId());
         assertEquals(fromDb.getProductName(), "id anthology");
         assertEquals(fromDb.getProductDescription(), "1996 ID software anthology box set with cool stuff");
-        assertEquals(fromDb.getProductPrice(), new BigDecimal("70.00"));*/
+        assertEquals(fromDb.getProductPrice(), new BigDecimal("70.00"));
     }
 }

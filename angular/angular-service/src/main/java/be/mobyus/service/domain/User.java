@@ -6,8 +6,11 @@ import javax.persistence.Id;
 
 import static javax.persistence.GenerationType.AUTO;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private Long id;
 
     private String username;

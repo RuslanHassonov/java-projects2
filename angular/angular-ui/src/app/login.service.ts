@@ -4,9 +4,9 @@ import {User} from "./user";
 import {Router} from "@angular/router";
 
 import {environment} from "../environments/environment";
-import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {concatMap, map} from "rxjs/operators";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {EMPTY, Observable, of} from "rxjs";
+import {catchError, concatMap, map, tap} from "rxjs/operators";
 
 
 @Injectable()
@@ -25,7 +25,10 @@ export class LoginService {
     return this.http.post(environment.backend + "/api/open/login", null, {
       'params': params,
       'withCredentials': true
-    }).pipe(concatMap(response => this.getUser()));
+    }).pipe(tap(e => this.authenticated = true), concatMap(response => this.getUser()), catchError(err => {
+      this.authenticated = false;
+      throw err;
+    }));
   }
 
   public isAuthenticated(): boolean {
@@ -38,6 +41,7 @@ export class LoginService {
 
   public logout() {
     this.http.get(environment.backend + "/logout", {'withCredentials': true}).subscribe((response) => {
+      this.authenticated = false;
       this.router.navigate(["public/login"]);
     });
   }
@@ -51,7 +55,7 @@ export class LoginService {
       'headers': headers
     }).pipe(map((response: any) => {
       return response;
-    }));
+    }), tap(e => this.authenticated = true));
   }
 
 }

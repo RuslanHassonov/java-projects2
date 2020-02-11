@@ -7,8 +7,11 @@ import java.math.BigDecimal;
 
 import static javax.persistence.GenerationType.AUTO;
 
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private Long id;
     private String productName;
     private String productDescription;
