@@ -161,6 +161,7 @@
         <module>vaadin</module>
         <module>RPI</module>
         <module>angular</module>
+        <module>Hibernate</module>
     </modules>
 
     <dependencyManagement>
