@@ -13,5 +13,6 @@
 	<modules>
 		<module>ie1</module>
 		<module>ie2</module>
+		<module>ie5</module>
 	</modules>
 </project>
