@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TextArea?>
+<StackPane id="StackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+		   xmlns:fx="http://javafx.com/fxml" fx:controller="be.mobyus.concurrency.controller.ConcurrentController">
+	<children>
+		<SplitPane dividerPositions="0.39195979899497485" focusTraversable="true" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+			<items>
+				<GridPane fx:id="grid" prefHeight="91.0" prefWidth="598.0">
+					<children>
+						<Button fx:id="searchSlow" cancelButton="true" mnemonicParsing="false" onAction="#searchSlow" text="Search slow" GridPane.columnIndex="1"
+								GridPane.rowIndex="1"/>
+						<Button fx:id="searchFast" defaultButton="true" mnemonicParsing="false" onAction="#searchFast" text="Search fast" GridPane.columnIndex="2"
+								GridPane.rowIndex="1"/>
+					</children>
+				</GridPane>
+			</items>
+		</SplitPane>
+	</children>
+</StackPane>

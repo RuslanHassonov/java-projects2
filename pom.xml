@@ -162,6 +162,7 @@
         <module>RPI</module>
         <module>angular</module>
         <module>Hibernate</module>
+        <module>concurrency</module>
     </modules>
 
     <dependencyManagement>
