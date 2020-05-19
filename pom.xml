@@ -163,6 +163,7 @@
         <module>angular</module>
         <module>Hibernate</module>
         <module>concurrency</module>
+	    <module>JEE7</module>
     </modules>
 
     <dependencyManagement>
