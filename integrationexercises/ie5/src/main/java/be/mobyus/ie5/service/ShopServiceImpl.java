@@ -2,6 +2,9 @@ package be.mobyus.ie5.service;
 
 import java.util.List;
 
+import be.mobyus.ie5.dao.CustomerDao;
+import be.mobyus.ie5.dao.OrderDao;
+import be.mobyus.ie5.dao.ProductDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +22,15 @@ public class ShopServiceImpl implements ShopService {
 	@Autowired
 	private ShopDao shopDao;
 
+	@Autowired
+	private CustomerDao customerDao;
+
+	@Autowired
+	private ProductDao productDao;
+
+	@Autowired
+	private OrderDao orderDao;
+
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Eshop> listEshops() {
@@ -27,14 +39,12 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public Eshop loadShop(Long shopId) {
-		// TODO complete me
-		return null;
+		return shopDao.loadShop(shopId);
 	}
 
 	@Override
 	public Customer loadCustomer(String username) {
-		// TODO complete me
-		return null;
+		return customerDao.loadCustomer(username);
 	}
 
 	@Override
@@ -44,13 +54,11 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public List<Product> listProducts(String name) {
-		// TODO complete me
-		return null;
+		return productDao.findProducts(name);
 	}
 
 	@Override
 	public List<Order> listOrders(Customer customer) {
-		// TODO complete me
-		return null;
+		return orderDao.findOrdersForCustomer(customer);
 	}
 }

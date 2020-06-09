@@ -1,6 +1,9 @@
 package be.mobyus.ie5.dao;
 
-public interface ProductDao {
+import be.mobyus.ie5.entities.Product;
 
-	// TODO complete me
+import java.util.List;
+
+public interface ProductDao {
+    List<Product> findProducts(String productName);
 }

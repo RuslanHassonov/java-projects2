@@ -1,6 +1,12 @@
 package be.mobyus.ie5.dao;
 
+import be.mobyus.ie5.entities.Customer;
+import be.mobyus.ie5.entities.Order;
+
+import java.util.List;
+
 public interface OrderDao {
 
-	// TODO complete me
+    List<Order> findOrdersForCustomer(Customer customer);
+    void saveOrder(Order order);
 }

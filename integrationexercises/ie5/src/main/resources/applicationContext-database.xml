@@ -18,5 +18,5 @@
 	<bean class="be.mobyus.util.H2IsolationLevelInitializerBean" init-method="setIsolationLevelReadUncommited">
 		<constructor-arg ref="dataSource"/>
 	</bean>
-	
+
 </beans>

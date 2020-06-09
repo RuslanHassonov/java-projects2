@@ -6,7 +6,9 @@ import be.mobyus.ie5.entities.Customer;
 import be.mobyus.ie5.entities.Eshop;
 import be.mobyus.ie5.entities.Order;
 import be.mobyus.ie5.entities.Product;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface ShopService {
 
 	public List<Eshop> listEshops();
