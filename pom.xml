@@ -21,7 +21,7 @@
         <spring.data.jpa.version>1.11.6.RELEASE</spring.data.jpa.version>
         <spring.ws.version>2.4.0.RELEASE</spring.ws.version>
         <spring.ldap.core.version>2.3.1.RELEASE</spring.ldap.core.version>
-        <spring.security.version>4.2.3.RELEASE</spring.security.version>
+        <spring.security.version>5.3.3.RELEASE</spring.security.version>
         <spring.security.oauth.version>2.2.0.RELEASE</spring.security.oauth.version>
     </properties>
 
